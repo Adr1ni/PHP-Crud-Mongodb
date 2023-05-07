@@ -14,7 +14,7 @@ $datos = $crud->mostrarDatos();
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Crud mongodb y php</h2>
+                    <h2>Registro de personas SUNAT(emulacion)</h2>
                     <a href="agregar.php" class="btn btn-primary">
                         <i class="fa-solid fa-user-plus"></i> Agregar registro
                     </a>
@@ -27,6 +27,7 @@ $datos = $crud->mostrarDatos();
                             <th>Fecha de nacimiento</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
+                            <th>DNI</th>
                         </thead>
                         <tbody>
                             <?php foreach($datos as $item): ?>
@@ -35,6 +36,7 @@ $datos = $crud->mostrarDatos();
                                 <td><?= $item->materno; ?></td>
                                 <td><?= $item->nombre; ?></td>
                                 <td><?= $item->fecha_nacimiento; ?></td>
+                                <td><?= $item->DNI?></td>
                                 <td class="text-center">
                                     <form action="actualizar.php" method="post">
                                         <input type="text" hidden value="<?= $item->_id; ?>" name="id">

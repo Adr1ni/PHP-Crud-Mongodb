@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="./public/bootstrap5/bootstrap.min.css">
     <link rel="stylesheet" href="./public/fontawesome-free-6.4.0-web/css/all.css">
     <link  rel="stylesheet" href="./public/css/style.css">
-    <title>Document</title>
+    <title>Registro SUNAT</title>
 </head>
-<body>
+<body> 
