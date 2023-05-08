@@ -10,7 +10,7 @@ $datos = [
     "materno" => $_POST['materno'],
     "nombre" => $_POST['nombre'],
     "fecha_nacimiento" => $_POST['fechaNacimiento'],
-    "DNI"=>$_POST['DNI'],
+    "DNI"=> $_POST['DNI'],
 ];
 
 $respuesta = $crud->insertarDatos($datos);

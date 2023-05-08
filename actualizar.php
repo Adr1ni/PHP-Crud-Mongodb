@@ -30,6 +30,8 @@ $datos = $crud->obtenerDocumento($id);
                         <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $datos->nombre; ?>">
                         <label for="fechaNacimiento">Fecha de nacimiento</label>
                         <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control" value="<?= $datos->fecha_nacimiento; ?>">
+                        <label for="DNI">DNI</label>
+                        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control" value="<?=$datos->DNI;?>">
                         <button class="btn btn-warning mt-3">
                             <i class="fa-solid fa-floppy-disk"></i> Actualizar
                         </button>

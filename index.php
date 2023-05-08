@@ -14,7 +14,7 @@ $datos = $crud->mostrarDatos();
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Registro de personas SUNAT(emulacion)</h2>
+                    <h2>Registro de clientes</h2>
                     <a href="agregar.php" class="btn btn-primary">
                         <i class="fa-solid fa-user-plus"></i> Agregar registro
                     </a>
@@ -25,9 +25,10 @@ $datos = $crud->mostrarDatos();
                             <th>Apellido materno</th>
                             <th>Nombre</th>
                             <th>Fecha de nacimiento</th>
+                            <th>DNI</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
-                            <th>DNI</th>
+                            <th>Promociones</th>
                         </thead>
                         <tbody>
                             <?php foreach($datos as $item): ?>
@@ -47,6 +48,12 @@ $datos = $crud->mostrarDatos();
                                     <form action="eliminar.php" method="post">
                                         <input type="text" hidden value="<?= $item->_id; ?>" name="id">
                                         <button class="btn btn-danger"><i class="fa-solid fa-user-xmark"></i></button>
+                                    </form>
+                                </td>
+                                <td class="text-center">
+                                    <form action="promociones.php" method="post">
+                                        <input type="text" hidden value="<?= $item->DNI; ?>" name="dni">
+                                        <button class="btn btn-success"><i class="fa-solid fa-add"></i></button>
                                     </form>
                                 </td>
                             </tr>
