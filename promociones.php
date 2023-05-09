@@ -1,7 +1,7 @@
 <?php include('./header.php'); 
 
-require_once "./clases/Connection.php";
-require_once "./clases/PromocionesCrud.php";
+include "./clases/Connection.php";
+include "./clases/PromocionesCrud.php";
 
 $crud = new PromocionesCrud();
 $id = $_POST['id'];

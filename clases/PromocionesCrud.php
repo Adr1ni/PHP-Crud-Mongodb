@@ -30,7 +30,7 @@ class PromocionesCrud extends Connection{
             $conexion = parent::connection();
             $coleccion = $conexion->promociones;
     
-            $pipeline = array(
+            $datos = $coleccion->aggregate(array(
                 array(
                     '$lookup' => array(
                         'from' => 'personas',
@@ -44,7 +44,7 @@ class PromocionesCrud extends Connection{
                 ),
                 array(
                     '$project' => array(
-                        '_id' => 1,
+                        'per._id' => 1,
                         'per.nombre' => 1,
                         'per.paterno' => 1,
                         'promocion' => 1,
@@ -54,12 +54,10 @@ class PromocionesCrud extends Connection{
                 ),
                 array(
                     '$match' => array(
-                        '_id' => new MongoDB\BSON\ObjectId($id)
+                        'per._id' => new MongoDB\BSON\ObjectId($id)
                     )
                 )
-            );
-    
-            $datos = $coleccion->aggregate($pipeline);
+            ));
             return $datos;
     
         }catch(\Throwable $th){
