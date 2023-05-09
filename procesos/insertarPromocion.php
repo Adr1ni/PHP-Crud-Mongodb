@@ -8,7 +8,7 @@ $crud = new PromocionesCrud();
 $promociones = [
     "promocion"=>$_POST['promocion'],
     "vencimiento"=>$_POST['vencimiento'],
-    "dni_cli" => $_POST['dni'],
+    "_id_cli" => new MongoDB\BSON\ObjectId($_POST['id'])
 ];
 
 $respuesta = $crud->agregarPromociones($promociones);

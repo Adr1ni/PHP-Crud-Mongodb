@@ -4,8 +4,8 @@ require_once "./clases/Connection.php";
 require_once "./clases/PromocionesCrud.php";
 
 $crud = new PromocionesCrud();
-$dni = $_POST['dni'];
-$datosPromociones = $crud->promocionesDelCliente($dni);
+$id = $_POST['id'];
+$datosPromociones = $crud->promocionesDelCliente($id);
 
 ?>
 
@@ -29,8 +29,8 @@ $datosPromociones = $crud->promocionesDelCliente($dni);
                                     <td><?=$datop->promocion; ?></td>
                                     <td><?=$datop->vencimiento; ?></td>
                                     <td class="text-center">
-                                    <form action="eliminar.php" method="post">
-                                        <input type="text" hidden value="<?= $datop->_id; ?>" name="id">
+                                    <form action="./procesos/enviarMensaje.php" method="post">
+                                        <input type="text" hidden value="<?= $id; ?>" name="id">
                                         <button class="btn btn-success"><i class="fa-solid fa-phone"></i> Mandar Promocion</button>
                                     </form>
                                 </td>
@@ -40,7 +40,7 @@ $datosPromociones = $crud->promocionesDelCliente($dni);
                     </table>
 
                     <form action="./procesos/insertarPromocion.php" method="post">
-                        <input type="text" hidden value="<?= $dni; ?>" name="dni">
+                        <input type="text" hidden value="<?= $id; ?>" name="id">
                         <label for="promocion">Promocion</label>
                         <input type="text" class="form-control" id="promocion" name="promocion" require>
                         <label for="vencimiento">Fecha de Vencimiento</label>

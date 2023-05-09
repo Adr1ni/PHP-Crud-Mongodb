@@ -26,6 +26,7 @@ $datos = $crud->mostrarDatos();
                             <th>Nombre</th>
                             <th>Fecha de nacimiento</th>
                             <th>DNI</th>
+                            <th>Numero</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
                             <th>Promociones</th>
@@ -38,6 +39,7 @@ $datos = $crud->mostrarDatos();
                                 <td><?= $item->nombre; ?></td>
                                 <td><?= $item->fecha_nacimiento; ?></td>
                                 <td><?= $item->DNI?></td>
+                                <td><?= $item->numero?></td>
                                 <td class="text-center">
                                     <form action="actualizar.php" method="post">
                                         <input type="text" hidden value="<?= $item->_id; ?>" name="id">
@@ -52,7 +54,7 @@ $datos = $crud->mostrarDatos();
                                 </td>
                                 <td class="text-center">
                                     <form action="promociones.php" method="post">
-                                        <input type="text" hidden value="<?= $item->DNI; ?>" name="dni">
+                                        <input type="text" hidden value="<?= $item->_id; ?>" name="id">
                                         <button class="btn btn-success"><i class="fa-solid fa-add"></i></button>
                                     </form>
                                 </td>
