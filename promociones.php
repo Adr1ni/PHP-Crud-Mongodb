@@ -30,7 +30,7 @@ $datosPromociones = $crud->promocionesDelCliente($id);
                                     <td><?=$datop->vencimiento; ?></td>
                                     <td class="text-center">
                                     <form action="./procesos/enviarMensaje.php" method="post">
-                                        <input type="text" hidden value="<?= $id; ?>" name="id">
+                                        <input type="text" hidden value="<?= $datop->_id; ?>" name="id">
                                         <button class="btn btn-success"><i class="fa-solid fa-phone"></i> Mandar Promocion</button>
                                     </form>
                                 </td>

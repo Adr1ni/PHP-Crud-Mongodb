@@ -25,6 +25,19 @@ class PromocionesCrud extends Connection{
         }
     }
 
+    public function obtenerPromocion($id){
+        try{
+            $conexion = parent::connection();
+            $coleccion = $conexion->promociones;
+            $datos = $coleccion->findOne(
+                array('_id' => new MongoDB\BSON\ObjectId($id))
+            );
+            return $datos;
+        }catch(\Throwable $th){
+            return $th->getMessage();
+        }
+    }
+
     public function promocionesDelClienteConJoin($id){
         try{
             $conexion = parent::connection();
@@ -44,7 +57,7 @@ class PromocionesCrud extends Connection{
                 ),
                 array(
                     '$project' => array(
-                        'per._id' => 1,
+                        '_id' => 1,
                         'per.nombre' => 1,
                         'per.paterno' => 1,
                         'promocion' => 1,
@@ -54,7 +67,7 @@ class PromocionesCrud extends Connection{
                 ),
                 array(
                     '$match' => array(
-                        'per._id' => new MongoDB\BSON\ObjectId($id)
+                        '_id' => new MongoDB\BSON\ObjectId($id),
                     )
                 )
             ));
