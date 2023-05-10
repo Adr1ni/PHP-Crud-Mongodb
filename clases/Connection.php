@@ -6,19 +6,8 @@ class Connection{
 
     public function connection(){
         try{
-
-            $server = "localhost";
-            $username = "adriano";
-            $password = "123456";
-            $bd = "crud";
-            $port = "27017";
-
-            $con = "mongodb://". 
-                $username. ":" . 
-                $password . "@" . 
-                $server . ":" .
-                $port . "/" . 
-                $bd;
+            $bd = "test";
+            $con = 'mongodb://mongo:HishARmlShynwMh6IWZP@containers-us-west-64.railway.app:7290';
 
             $client = new MongoDB\Client($con);
 

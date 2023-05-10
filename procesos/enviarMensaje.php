@@ -10,7 +10,8 @@ $datos = $crud->obtenerPromocion($_POST['id']);
 $datosCliente = $crud2->obtenerDocumento($datos->_id_cli);
 
 
-$url = 'https://api.green-api.com/waInstance1101817099/SendMessage/41a047f8909f470e992aee930076756f172813ed45be444ca8';
+$url = "https://api.green-api.com/waInstance1101817584/SendMessage/62ffea14a44341d3a8d370675305284d27faad50766f49048f";
+//$url = 'https://api.green-api.com/waInstance1101817099/SendMessage/41a047f8909f470e992aee930076756f172813ed45be444ca8';
 
 
 $data = [
@@ -28,6 +29,6 @@ $options = [
 ];
 
 $context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
+$result = file_get_contents($url, false, $context); 
 
 

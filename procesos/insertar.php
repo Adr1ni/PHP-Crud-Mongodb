@@ -16,7 +16,7 @@ $datos = [
 
 $respuesta = $crud->insertarDatos($datos);
 
-if($respuesta->getInsertedId() > 0){
+if($respuesta){
     header(("location:../index.php"));
 }else{
     print_r($respuesta);

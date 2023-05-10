@@ -21,7 +21,7 @@
                         <input type="date" name="fechaNacimiento" id="fechaNacimiento" class="form-control">
                         <label for="DNI">DNI</label>
                         <input type="text" name="DNI" id="DNI" class="form-control">
-                        <label for="numero">DNI</label>
+                        <label for="numero">Numero</label>
                         <input type="text" name="numero" id="numero" class="form-control">
                         <button class="btn btn-primary mt-3"><i class="fa-solid fa-floppy-disk"></i> Agregar</button>
                     </form>
