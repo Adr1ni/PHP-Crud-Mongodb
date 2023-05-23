@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:8.1-apache
 COPY src/ /var/www/html
 RUN apt-get update \
     && apt-get install -y --no-install-recommends openssl libssl-dev libcurl4-openssl-dev \
